@@ -1,16 +1,8 @@
 {
     "name": "pomelchenko/decorator",
-    "description": "Decorator helper",
+    "description": "PHP Decorators helper like Python decorators",
     "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "^10.4"
-    },
     "license": "GPL-3",
-    "autoload": {
-        "psr-4": {
-            "Pomelchenko\\Decorator\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Pavel Omelchenko",
@@ -18,5 +10,15 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.4"
+    },
+    "autoload": {
+        "files": [
+            "src/helper.php"
+        ]
+    }
 }
