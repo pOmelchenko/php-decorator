@@ -2,7 +2,7 @@
     "name": "pomelchenko/decorator",
     "description": "PHP Decorators helper like Python decorators",
     "type": "library",
-    "license": "GPL-3",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Pavel Omelchenko",
