@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up python
         id: setup-python
@@ -37,11 +37,17 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Sphinx build
-        run: |
-          sphinx-build docs build
+        run: >
+          sphinx-build
+          -M html ./docs ./build
+          -T
+          -W
+          --jobs=auto
+          -vv
+          --keep-going
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           publish_branch: gh-pages
