@@ -37,7 +37,7 @@ jobs:
         run: poetry install --no-interaction
 
       - name: Sphinx build
-        run: >
+        run: |
           source .venv/bin/activate
           sphinx-build docs build
 
